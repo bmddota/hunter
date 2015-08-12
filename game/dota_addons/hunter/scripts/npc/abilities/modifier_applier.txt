@@ -1,0 +1,281 @@
+  "modifier_applier"
+  {
+    "AbilityBehavior"     "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"           "ability_datadriven"
+    "AbilityTextureName"            "rubick_empty1"
+    "MaxLevel"                      "1"
+
+    "Modifiers"
+    {
+      "dummy_unit"
+      {
+          ////"Passive"                        "1"
+          "IsHidden"                        "1"    
+          "States"
+          {
+              "MODIFIER_STATE_UNSELECTABLE" "MODIFIER_STATE_VALUE_ENABLED"
+              "MODIFIER_STATE_INVULNERABLE"    "MODIFIER_STATE_VALUE_ENABLED"
+              "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+              "MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
+          }
+      }
+
+      "no_health_bar"
+      {
+          "Attributes"       "MODIFIER_ATTRIBUTE_PERMANENT" 
+          ////"Passive"                        "1"
+          "IsHidden"                        "1"    
+
+          "States"
+          {
+              //"MODIFIER_STATE_UNSELECTABLE" "MODIFIER_STATE_VALUE_ENABLED"
+              //"MODIFIER_STATE_INVULNERABLE"    "MODIFIER_STATE_VALUE_ENABLED"
+              //"MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+              "MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
+          }
+      }
+
+      "ability_layout_6"
+      {
+          "Attributes"       "MODIFIER_ATTRIBUTE_PERMANENT" 
+          ////"Passive"                        "1"
+          "IsHidden"                        "1"    
+
+          "Properties"
+          {
+              "MODIFIER_PROPERTY_ABILITY_LAYOUT" "6"
+          }
+      }
+
+      "rooted"
+      {
+          ////"Passive"                        "1"
+          "IsHidden"                        "1"
+
+          "States"
+          {
+              "MODIFIER_STATE_ROOTED" "MODIFIER_STATE_VALUE_ENABLED"
+          }
+      } 
+
+      "mana_regen_reduced"
+      {
+          ////"Passive"                        "1"
+          "IsHidden"                        "1"
+
+          "Properties"
+          {
+              "MODIFIER_PROPERTY_MANA_REGEN_PERCENTAGE" "-70"
+          }
+      }
+
+      "stunned"
+      {
+          ////"Passive"                        "1"
+          "IsHidden"                        "1"
+
+          "States"
+          {
+              //"MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
+              "MODIFIER_STATE_COMMAND_RESTRICTED" "MODIFIER_STATE_VALUE_ENABLED"
+          }
+      }
+
+      "real_stunned"
+      {
+          ////"Passive"                        "1"
+          "IsHidden"                        "1"
+
+          "States"
+          {
+              "MODIFIER_STATE_STUNNED" "MODIFIER_STATE_VALUE_ENABLED"
+              //"MODIFIER_STATE_COMMAND_RESTRICTED" "MODIFIER_STATE_VALUE_ENABLED"
+          }
+      }
+
+      "tree_climbed"
+      {
+        "TextureName" "climb_down"
+      }
+
+      "modifier_bush_hiding"
+      {
+        "TextureName" "treant_natures_guise"
+
+        "OnDestroy"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/bush_hiding.lua"
+            "Function"    "BushHidingDestroyed"
+          }
+        }
+      }
+
+      "modifier_bush_hidden"
+      {
+        "TextureName" "treant_natures_guise"
+
+        "ThinkInterval"  ".3"
+        "OnIntervalThink"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/bush_hiding.lua"
+            "Function"    "BushHiddenThink"
+          }
+        }
+
+        "Properties"
+        {
+          //"MODIFIER_PROPERTY_INVISIBILITY_LEVEL" "1" //unhandled
+          "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-30"
+        }
+
+        "States"
+        {
+          "MODIFIER_STATE_INVISIBLE"    "MODIFIER_STATE_VALUE_ENABLED"
+        }
+      }
+
+      "modifier_ghost_hero"
+      {
+          ////"Passive"                        "1"
+          "IsHidden"                        "1"    
+          "States"
+          {
+              //"MODIFIER_STATE_UNSELECTABLE" "MODIFIER_STATE_VALUE_ENABLED"
+              "MODIFIER_STATE_INVULNERABLE"    "MODIFIER_STATE_VALUE_ENABLED"
+              "MODIFIER_STATE_NOT_ON_MINIMAP" "MODIFIER_STATE_VALUE_ENABLED"
+              "MODIFIER_STATE_NO_HEALTH_BAR" "MODIFIER_STATE_VALUE_ENABLED"
+              "MODIFIER_STATE_FLYING" "MODIFIER_STATE_VALUE_ENABLED"
+          }
+      }
+
+      "modifier_ghost_time"
+      { 
+          "TextureName" "dazzle_shallow_grave"
+      }
+
+      "modifier_ghost_delay"
+      { 
+          "TextureName" "skeleton_king_reincarnation"
+      }
+
+      "modifier_ghost_resurrection"
+      {
+          "TextureName" "courier_shield"
+          "States"
+          {
+              //"MODIFIER_STATE_UNSELECTABLE" "MODIFIER_STATE_VALUE_ENABLED"
+              "MODIFIER_STATE_COMMAND_RESTRICTED"    "MODIFIER_STATE_VALUE_ENABLED"
+          }
+      }
+
+      "modifier_leashing"
+      {
+          "TextureName" "omniknight_repel"
+
+          "Properties"
+          {
+            "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "100"
+            "MODIFIER_PROPERTY_HEALTH_REGEN_PERCENTAGE" "60"
+          }
+
+          "States"
+          {
+              //"MODIFIER_STATE_UNSELECTABLE" "MODIFIER_STATE_VALUE_ENABLED"
+              "MODIFIER_STATE_NO_UNIT_COLLISION"    "MODIFIER_STATE_VALUE_ENABLED"
+          }
+      }
+
+      "modifier_roaming"
+      {
+          "IsHidden"                        "1"
+
+          "States"
+          {
+              //"MODIFIER_STATE_UNSELECTABLE" "MODIFIER_STATE_VALUE_ENABLED"
+              "MODIFIER_STATE_NO_UNIT_COLLISION"    "MODIFIER_STATE_VALUE_ENABLED"
+          }
+      }
+
+      "cast_angle"
+      {
+          "TextureName" "courier_shield"
+
+          "Properties"
+          {
+            "MODIFIER_PROPERTY_IGNORE_CAST_ANGLE" "1"
+          }
+      }
+
+      "force_draw"
+      {
+          "TextureName" "courier_shield"
+
+          "Properties"
+          {
+            "MODIFIER_PROPERTY_FORCE_DRAW_MINIMAP" "1"
+          }
+
+          "States"
+          {
+            "MODIFIER_STATE_OUT_OF_GAME" "MODIFIER_STATE_VALUE_ENABLED"
+          }
+      }
+
+      "disable_turning"
+      {
+          "TextureName" "courier_shield"
+
+          "Properties"
+          {
+            "MODIFIER_PROPERTY_DISABLE_TURNING " "1"
+          }
+      }
+
+      "disable_autoattack"
+      {
+          "TextureName" "courier_shield"
+
+          "Properties"
+          {
+            "MODIFIER_PROPERTY_DISABLE_AUTOATTACK " "1"
+          }
+      }
+
+      "modifier_damage_reduction"
+      {
+        "IsHidden"  "1"
+
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "-1"
+        }
+      }
+
+      "modifier_health_bonus"
+      {
+        "IsHidden"  "1"
+
+        "Properties"
+        {
+          "MODIFIER_PROPERTY_HEALTH_BONUS" "1"
+        }
+      }
+
+      "modifier_chakram_slow"
+      {
+        "TextureName" "shredder_chakram"
+        "IsDebuff"  "1"
+
+        "Properties"
+        {
+          //"MODIFIER_PROPERTY_INVISIBILITY_LEVEL" "1" //unhandled
+          "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-60"
+        }
+      }
+
+    }
+  }

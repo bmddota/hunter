@@ -1,0 +1,354 @@
+    "fire_mage_attack"
+    {
+        // General
+        "BaseClass"                     "ability_datadriven"//"ability_lua"
+        "AbilityTextureName"            "juggernaut_blade_dance"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+
+        "AbilityCastAnimation"          "ACT_DOTA_IDLE"
+
+        // Casting
+        "AbilityCastPoint"              "0.0"
+        //"AbilityCastRangeBuffer" "250"
+        "AbilityCastRange"              "800"
+        "AbilityDamage"                 "20"
+
+        // Time
+        "AbilityCooldown"               "2.0"
+        "AbilityChannelTime"            "0.0"
+        "MaxLevel"                      "1"
+
+        "MaxLevel"              "4"
+        "RequiredLevel"        "25"
+        "LevelsBetweenUpgrades" "1"
+
+        // Cost
+        "AbilityManaCost"               "0"
+
+        "precache"
+        {
+            "particle"  "particles/hunter_fire_mage/attack.vpcf"
+        }
+        
+        // Special
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "damage_absorb"             "200 300 400 500"
+            }
+            "02"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "bonus_damage"              "20 40 60 80"
+            }
+            "04"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "duration"                  "17.0 17.0 17.0 17.0"
+            }
+        }
+
+        "OnSpellStart"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/fire_mage/fire_mage_attack.lua"
+            "Function"    "OnSpellStart"
+            "Target"      "POINT"
+          }
+        }
+    }
+
+
+    "fire_mage_blast"
+    {
+        // General
+        "BaseClass"                     "ability_datadriven"//"ability_lua"
+        "AbilityTextureName"            "forged_spirit_melting_strike"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+
+        "AbilityCastAnimation"          "ACT_DOTA_IDLE"
+
+        // Casting
+        "AbilityCastPoint"              "1.0"
+        //"AbilityCastRangeBuffer" "250"
+        "AbilityDamage"                 "20"
+
+        // Time
+        "AbilityCooldown"               "5.0"
+        "AbilityChannelTime"            "0.0"
+        "MaxLevel"                      "1"
+
+        "MaxLevel"              "4"
+        "RequiredLevel"        "25"
+        "LevelsBetweenUpgrades" "1"
+
+        // Cost
+        "AbilityManaCost"               "0"
+
+        "precache"
+        {
+            "particle"  "particles/hunter_fire_mage/blast_explosion.vpcf"
+            "particle"  "particles/hunter_fire_mage/blast_blastup_immortal1.vpcf"
+        }
+        
+        // Special
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "damage_absorb"             "200 300 400 500"
+            }
+            "02"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "bonus_damage"              "20 40 60 80"
+            }
+            "04"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "duration"                  "17.0 17.0 17.0 17.0"
+            }
+        }
+
+        "OnSpellStart"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/fire_mage/fire_mage_blast.lua"
+            "Function"    "OnSpellStart"
+          }
+        }
+
+        "OnAbilityPhaseStart"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/fire_mage/fire_mage_blast.lua"
+            "Function"    "OnAbilityPhaseStart"
+          }
+        }
+
+        "OnAbilityPhaseInterrupted"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/fire_mage/fire_mage_blast.lua"
+            "Function"    "OnAbilityPhaseInterrupted"
+          }
+        }
+    }
+
+    "fire_mage_flame_tornado"
+    {
+        // General
+        "BaseClass"                     "ability_datadriven"//"ability_lua"
+        "AbilityTextureName"            "fire_mage_flame_tornado"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+        //"ScriptFile"                    "abilities/berserker/fire_mage_helix"
+
+        "AbilityCastAnimation"          "ACT_DOTA_IDLE"
+
+        // Casting
+        "AbilityCastPoint"              "0.0"
+        //"AbilityCastRangeBuffer" "250"
+        "AbilityDamage"                 "20"
+
+        // Time
+        "AbilityCooldown"               "5.0"
+        "AbilityChannelTime"            "0.0"
+
+        "MaxLevel"              "4"
+        "RequiredLevel"        "25"
+        "LevelsBetweenUpgrades" "1"
+
+        // Cost
+        "AbilityManaCost"               "0"
+
+        "precache"
+        {
+            "particle"  "particles/hunter_fire_mage/flame_tornado.vpcf"
+        }
+        
+        // Special
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "damage_absorb"             "200 300 400 500"
+            }
+            "02"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "bonus_damage"              "20 40 60 80"
+            }
+            "04"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "duration"                  "17.0 17.0 17.0 17.0"
+            }
+        }
+
+        "OnSpellStart"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/fire_mage/fire_mage_flame_tornado.lua"
+            "Function"    "OnSpellStart"
+          }
+        }
+    }
+
+    "fire_mage_fire_skin"
+    {
+        // General
+        "BaseClass"                     "ability_datadriven"//"ability_lua"
+        "AbilityTextureName"            "warlock_golem_flaming_fists"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+        //"ScriptFile"                    "abilities/berserker/fire_mage_helix"
+
+        "AbilityCastAnimation"          "ACT_DOTA_IDLE"
+        //"AnimationPlaybackRate"         "1"
+
+        // Casting
+        "AbilityCastPoint"              "0.3"
+
+        // Time
+        "AbilityCooldown"               "5.0"
+        "AbilityChannelTime"            "0.0"
+        "MaxLevel"                      "1"
+
+        "MaxLevel"              "4"
+        "RequiredLevel"        "25"
+        "LevelsBetweenUpgrades" "1"
+
+        // Cost
+        "AbilityManaCost"               "0"
+
+        "precache"
+        {
+          "particle"  "particles/status_fx/status_effect_doom.vpcf"
+          "particle"  "particles/units/heroes/hero_sven/sven_spell_gods_strength.vpcf"
+          "particle"  "particles/hunter_fire_mage/fire_skin_flame.vpcf"
+        }
+        
+        // Special
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "damage_absorb"             "200 300 400 500"
+            }
+            "02"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "bat_boost"                 "1.4 1.7 2.0 2.3"
+            }
+            "04"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "duration"                  "17.0 17.0 17.0 17.0"
+            }
+        }
+
+        "OnAbilityPhaseStart"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/fire_mage/fire_mage_fire_skin.lua"
+            "Function"    "OnAbilityPhaseStart"
+          }
+        }
+
+        "OnAbilityPhaseInterrupted"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/fire_mage/fire_mage_fire_skin.lua"
+            "Function"    "OnAbilityPhaseInterrupted"
+          }
+        }
+
+        "OnSpellStart"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/fire_mage/fire_mage_fire_skin.lua"
+            "Function"    "OnSpellStart"
+          }
+
+          "ApplyModifier"
+          {
+            "Target"  "CASTER"
+            "ModifierName"  "modifier_fire_skin"
+            "Duration"  "5.0"
+          }
+
+          "FireEffect"
+          {
+            "Target"  "CASTER"
+            "EffectName"  "particles/units/heroes/hero_sven/sven_spell_gods_strength.vpcf"
+            "EffectAttachType"  "follow_origin"
+          }
+        }
+
+        "Modifiers"
+        {
+          "modifier_fire_skin"
+          {
+            "TextureName" "warlock_golem_flaming_fists"
+            "StatusEffectName"     "particles/status_fx/status_effect_doom.vpcf"
+            //"StatusEffectName"     "particles/status_fx/hunter_rage.vpcf"
+            //"StatusEffectName"     "particles/status_fx/hunter_borrowed_time.vpcf"
+            "StatusEffectPriority" "10"
+
+            "EffectName"  "particles/hunter_fire_mage/fire_skin_flame.vpcf"
+            "EffectAttachType"  "follow_origin"
+
+            "OnTakeDamage"
+            {
+                "RunScript"
+                {
+                    "ScriptFile"  "abilities/fire_mage/fire_mage_fire_skin.lua"
+                    "Function"    "OnTakeDamage"
+                    "Damage"      "%attack_damage"
+                }
+            }
+
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                  "ScriptFile"  "abilities/fire_mage/fire_mage_fire_skin.lua"
+                  "Function"    "OnCreated"
+                }
+            }
+
+            "OnDestroy"
+            {
+                "RunScript"
+                {
+                  "ScriptFile"  "abilities/fire_mage/fire_mage_fire_skin.lua"
+                  "Function"    "OnDestroy"
+                }
+            }
+          }
+        }
+    }

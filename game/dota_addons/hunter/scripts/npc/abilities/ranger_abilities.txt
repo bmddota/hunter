@@ -1,0 +1,360 @@
+    "ranger_attack"
+    {
+        // General
+        "BaseClass"                     "ability_datadriven"//"ability_lua"
+        "AbilityTextureName"            "juggernaut_blade_dance"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+
+        "AbilityCastAnimation"          "ACT_DOTA_IDLE"
+
+        // Casting
+        "AbilityCastPoint"              "0.0"
+        //"AbilityCastRangeBuffer" "250"
+        "AbilityCastRange"              "600"
+        "AbilityDamage"                 "20"
+
+        // Time
+        "AbilityCooldown"               "2.0"
+        "AbilityChannelTime"            "0.0"
+        "MaxLevel"                      "1"
+
+        "MaxLevel"              "4"
+        "RequiredLevel"        "25"
+        "LevelsBetweenUpgrades" "1"
+
+        // Cost
+        "AbilityManaCost"               "0"
+
+        "precache"
+        {
+            "particle"  "particles/units/heroes/hero_windrunner/windrunner_spell_powershot.vpcf"
+        }
+        
+        // Special
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "damage_absorb"             "200 300 400 500"
+            }
+            "02"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "bonus_damage"              "20 40 60 80"
+            }
+            "04"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "duration"                  "17.0 17.0 17.0 17.0"
+            }
+        }
+
+        "OnSpellStart"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/ranger/ranger_attack.lua"
+            "Function"    "OnSpellStart"
+            "Target"      "POINT"
+          }
+        }
+    }
+
+
+    "ranger_split_shot"
+    {
+        // General
+        "BaseClass"                     "ability_datadriven"//"ability_lua"
+        "AbilityTextureName"            "ranger_split_shot"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+        //"ScriptFile"                    "abilities/berserker/ranger_helix"
+
+        "AbilityCastAnimation"          "ACT_DOTA_IDLE"
+
+        // Casting
+        "AbilityCastPoint"              "0.6"
+        //"AbilityCastRangeBuffer" "250"
+        "AbilityDamage"                 "20"
+
+        // Time
+        "AbilityCooldown"               "5.0"
+        "AbilityChannelTime"            "0.0"
+        "MaxLevel"                      "1"
+
+        "MaxLevel"              "4"
+        "RequiredLevel"        "25"
+        "LevelsBetweenUpgrades" "1"
+
+        // Cost
+        "AbilityManaCost"               "0"
+
+        "precache"
+        {
+            "particle"  "particles/econ/items/windrunner/windrunner_cape_cascade/windrunner_windrun_magic_trail_cascade.vpcf"
+            "particle"  "particles/units/heroes/hero_windrunner/windrunner_spell_powershot.vpcf"
+        }
+        
+        // Special
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "damage_absorb"             "200 300 400 500"
+            }
+            "02"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "bonus_damage"              "20 40 60 80"
+            }
+            "04"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "duration"                  "17.0 17.0 17.0 17.0"
+            }
+        }
+
+        "OnAbilityPhaseStart"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/ranger/ranger_split_shot.lua"
+            "Function"    "OnAbilityPhaseStart"
+          }
+        }
+
+        "OnAbilityPhaseInterrupted"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/ranger/ranger_split_shot.lua"
+            "Function"    "OnAbilityPhaseInterrupted"
+          }
+        }
+
+        "OnSpellStart"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/ranger/ranger_split_shot.lua"
+            "Function"    "OnSpellStart"
+          }
+        }
+    }
+
+    "ranger_backflip"
+    {
+        // General
+        "BaseClass"                     "ability_datadriven"//"ability_lua"
+        "AbilityTextureName"            "ranger_backflip"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+        //"ScriptFile"                    "abilities/berserker/ranger_helix"
+
+        "AbilityCastAnimation"          "ACT_DOTA_IDLE"
+
+        // Casting
+        "AbilityCastPoint"              "0.0"
+        //"AbilityCastRangeBuffer" "250"
+        "AbilityDamage"                 "20"
+
+        // Time
+        "AbilityCooldown"               "5.0"
+        "AbilityChannelTime"            "0.0"
+        "MaxLevel"                      "1"
+
+        "MaxLevel"              "4"
+        "RequiredLevel"        "25"
+        "LevelsBetweenUpgrades" "1"
+
+        // Cost
+        "AbilityManaCost"               "0"
+
+        "precache"
+        {
+            "particle"  "particles/hunter_ranger/ranger_trail.vpcf"
+            "particle"  "particles/units/heroes/hero_windrunner/windrunner_spell_powershot.vpcf"
+        }
+        
+        // Special
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "damage_absorb"             "200 300 400 500"
+            }
+            "02"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "bonus_damage"              "20 40 60 80"
+            }
+            "04"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "duration"                  "17.0 17.0 17.0 17.0"
+            }
+        }
+
+        "OnSpellStart"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/ranger/ranger_backflip.lua"
+            "Function"    "OnSpellStart"
+          }
+        }
+    }
+
+    "ranger_rapid_fire"
+    {
+        // General
+        "BaseClass"                     "ability_datadriven"//"ability_lua"
+        "AbilityTextureName"            "windrunner_focusfire"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+        //"ScriptFile"                    "abilities/berserker/ranger_helix"
+
+        "AbilityCastAnimation"          "ACT_DOTA_IDLE"
+        //"AnimationPlaybackRate"         "1"
+
+        // Casting
+        "AbilityCastPoint"              "0.3"
+
+        // Time
+        "AbilityCooldown"               "5.0"
+        "AbilityChannelTime"            "0.0"
+        "MaxLevel"                      "1"
+
+        "MaxLevel"              "4"
+        "RequiredLevel"        "25"
+        "LevelsBetweenUpgrades" "1"
+
+        // Cost
+        "AbilityManaCost"               "0"
+
+        "precache"
+        {
+          "particle"  "particles/status_fx/status_effect_poison_viper.vpcf"
+          "particle"  "particles/hunter_ranger/rapid_fire.vpcf"
+          "particle"  "particles/econ/items/sven/sven_cyclopean_marauder/sven_cyclopean_gods_strength_ambient.vpcf"
+          "particle"  "particles/hunter_ranger/ranger_trail.vpcf"
+        }
+        
+        // Special
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "damage_absorb"             "200 300 400 500"
+            }
+            "02"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "bat_boost"                 "1.4 1.7 2.0 2.3"
+            }
+            "04"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "duration"                  "17.0 17.0 17.0 17.0"
+            }
+        }
+
+        "OnAbilityPhaseStart"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/ranger/ranger_rapid_fire.lua"
+            "Function"    "OnAbilityPhaseStart"
+          }
+        }
+
+        "OnAbilityPhaseInterrupted"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/ranger/ranger_rapid_fire.lua"
+            "Function"    "OnAbilityPhaseInterrupted"
+          }
+        }
+
+        "OnSpellStart"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/ranger/ranger_rapid_fire.lua"
+            "Function"    "OnSpellStart"
+          }
+
+          "ApplyModifier"
+          {
+            "Target"  "CASTER"
+            "ModifierName"  "modifier_rapid_fire"
+            "Duration"  "5.0"
+          }
+
+          "FireEffect"
+          {
+            "Target"  "CASTER"
+            "EffectName"  "particles/hunter_ranger/rapid_fire.vpcf"
+            "EffectAttachType"  "follow_origin"
+          }
+        }
+
+        "Modifiers"
+        {
+          "modifier_rapid_fire"
+          {
+            "TextureName" "windrunner_focusfire"
+            "StatusEffectName"     "particles/status_fx/status_effect_poison_viper.vpcf"
+            //"StatusEffectName"     "particles/status_fx/hunter_rage.vpcf"
+            //"StatusEffectName"     "particles/status_fx/hunter_borrowed_time.vpcf"
+            "StatusEffectPriority" "10"
+
+            "EffectName"  "particles/econ/items/sven/sven_cyclopean_marauder/sven_cyclopean_gods_strength_ambient.vpcf"
+            "EffectAttachType"  "follow_origin"
+
+            "Properties"
+            {
+                "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "-50"
+            }
+
+            "OnCreated"
+            {
+                "RunScript"
+                {
+                  "ScriptFile"  "abilities/ranger/ranger_rapid_fire.lua"
+                  "Function"    "OnCreated"
+                }
+
+                "AttachEffect"
+                {
+                    "Target"  "CASTER"
+                    "EffectName"  "particles/hunter_ranger/ranger_trail.vpcf"
+                    "EffectAttachType"  "follow_origin"
+                }
+            }
+
+            "OnDestroy"
+            {
+                "RunScript"
+                {
+                  "ScriptFile"  "abilities/ranger/ranger_rapid_fire.lua"
+                  "Function"    "OnDestroy"
+                }
+            }
+          }
+        }
+    }

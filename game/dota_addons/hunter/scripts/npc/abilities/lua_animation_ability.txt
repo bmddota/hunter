@@ -1,0 +1,8 @@
+  "lua_animation_ability"
+  {
+    // General
+    //-------------------------------------------------------------------------------------------------------------
+    "BaseClass"           "ability_lua"
+    "ScriptFile"                  "abilities/lua_animation_ability"
+    "MaxLevel"                      "1"
+  }

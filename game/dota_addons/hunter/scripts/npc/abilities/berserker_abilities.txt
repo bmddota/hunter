@@ -1,0 +1,307 @@
+    "berserker_attack"
+    {
+        // General
+        "BaseClass"                     "ability_datadriven"//"ability_lua"
+        "AbilityTextureName"            "juggernaut_blade_dance"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+
+        "AbilityCastAnimation"          "ACT_DOTA_IDLE"
+
+        // Casting
+        "AbilityCastPoint"              "0.0"
+        //"AbilityCastRangeBuffer" "250"
+        "AbilityCastRange"              "128"
+        "AbilityDamage"                 "20"
+
+        // Time
+        "AbilityCooldown"               "2.0"
+        "AbilityChannelTime"            "0.0"
+        "MaxLevel"                      "1"
+
+        "MaxLevel"              "4"
+        "RequiredLevel"        "25"
+        "LevelsBetweenUpgrades" "1"
+
+        // Cost
+        "AbilityManaCost"               "0"
+        
+        // Special
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "damage_absorb"             "200 300 400 500"
+            }
+            "02"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "bonus_damage"              "20 40 60 80"
+            }
+            "04"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "duration"                  "17.0 17.0 17.0 17.0"
+            }
+        }
+
+        "OnSpellStart"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/berserker/berserker_attack.lua"
+            "Function"    "OnSpellStart"
+          }
+        }
+    }
+
+
+    "berserker_helix"
+    {
+        // General
+        "BaseClass"                     "ability_datadriven"//"ability_lua"
+        "AbilityTextureName"            "axe_counter_helix"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+        //"ScriptFile"                    "abilities/brawler/berserker_helix"
+
+        "AbilityCastAnimation"          "ACT_DOTA_IDLE"
+
+        // Casting
+        "AbilityCastPoint"              "0.0"
+        //"AbilityCastRangeBuffer" "250"
+        "AbilityDamage"                 "20"
+
+        // Time
+        "AbilityCooldown"               "5.0"
+        "AbilityChannelTime"            "0.0"
+        "MaxLevel"                      "1"
+
+        "MaxLevel"              "4"
+        "RequiredLevel"        "25"
+        "LevelsBetweenUpgrades" "1"
+
+        // Cost
+        "AbilityManaCost"               "0"
+        
+        // Special
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "damage_absorb"             "200 300 400 500"
+            }
+            "02"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "bonus_damage"              "20 40 60 80"
+            }
+            "04"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "duration"                  "17.0 17.0 17.0 17.0"
+            }
+        }
+
+        "OnSpellStart"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/berserker/berserker_helix.lua"
+            "Function"    "OnSpellStart"
+          }
+        }
+    }
+
+    "berserker_blitz"
+    {
+        // General
+        "BaseClass"                     "ability_datadriven"//"ability_lua"
+        "AbilityTextureName"            "black_dragon_splash_attack"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+        //"ScriptFile"                    "abilities/brawler/berserker_helix"
+
+        "AbilityCastAnimation"          "ACT_DOTA_IDLE"
+
+        // Casting
+        "AbilityCastPoint"              "0.0"
+        //"AbilityCastRangeBuffer" "250"
+        "AbilityDamage"                 "20"
+
+        // Time
+        "AbilityCooldown"               "5.0"
+        "AbilityChannelTime"            "0.0"
+        "MaxLevel"                      "1"
+
+        "MaxLevel"              "4"
+        "RequiredLevel"        "25"
+        "LevelsBetweenUpgrades" "1"
+
+        // Cost
+        "AbilityManaCost"               "0"
+        
+        // Special
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "damage_absorb"             "200 300 400 500"
+            }
+            "02"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "bonus_damage"              "20 40 60 80"
+            }
+            "04"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "duration"                  "17.0 17.0 17.0 17.0"
+            }
+        }
+
+        "OnSpellStart"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/berserker/berserker_blitz.lua"
+            "Function"    "OnSpellStart"
+          }
+        }
+    }
+
+    "berserker_berserk"
+    {
+        // General
+        "BaseClass"                     "ability_datadriven"//"ability_lua"
+        "AbilityTextureName"            "axe_berserkers_call"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+        //"ScriptFile"                    "abilities/brawler/berserker_helix"
+
+        "AbilityCastAnimation"          "ACT_DOTA_IDLE"
+        //"AnimationPlaybackRate"         "1"
+
+        // Casting
+        "AbilityCastPoint"              "0.5"
+        //"AbilityCastRangeBuffer" "250"
+        "AbilityDamage"                 "20"
+
+        // Time
+        "AbilityCooldown"               "5.0"
+        "AbilityChannelTime"            "0.0"
+        "MaxLevel"                      "1"
+
+        "MaxLevel"              "4"
+        "RequiredLevel"        "25"
+        "LevelsBetweenUpgrades" "1"
+
+        // Cost
+        "AbilityManaCost"               "0"
+
+        "precache"
+        {
+          "particle"  "particles/status_fx/status_effect_life_stealer_rage.vpcf"
+          "particle"  "particles/units/heroes/hero_sven/sven_spell_gods_strength.vpcf"
+          "particle"  "particles/econ/items/sven/sven_cyclopean_marauder/sven_cyclopean_gods_strength_ambient.vpcf"
+          "particle"  "particles/hunter_brawler/flame.vpcf"
+        }
+        
+        // Special
+        "AbilitySpecial"
+        {
+            "01"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "damage_absorb"             "200 300 400 500"
+            }
+            "02"
+            {
+                "var_type"                  "FIELD_INTEGER"
+                "bonus_damage"              "20 40 60 80"
+            }
+            "04"
+            {
+                "var_type"                  "FIELD_FLOAT"
+                "duration"                  "17.0 17.0 17.0 17.0"
+            }
+        }
+
+        "OnAbilityPhaseStart"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/berserker/berserker_berserk.lua"
+            "Function"    "OnAbilityPhaseStart"
+          }
+        }
+
+        "OnAbilityPhaseInterrupted"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/berserker/berserker_berserk.lua"
+            "Function"    "OnAbilityPhaseInterrupted"
+          }
+        }
+
+        "OnSpellStart"
+        {
+          "RunScript"
+          {
+            "ScriptFile"  "abilities/berserker/berserker_berserk.lua"
+            "Function"    "OnSpellStart"
+          }
+
+          "ApplyModifier"
+          {
+            "Target"  "CASTER"
+            "ModifierName"  "modifier_berserk"
+            "Duration"  "5.0"
+          }
+
+          "FireEffect"
+          {
+            "Target"  "CASTER"
+            "EffectName"  "particles/units/heroes/hero_sven/sven_spell_gods_strength.vpcf"
+            "EffectAttachType"  "follow_origin"
+          }
+        }
+
+        "Modifiers"
+        {
+          "modifier_berserk"
+          {
+            "TextureName" "axe_berserkers_call"
+            "StatusEffectName"     "particles/status_fx/status_effect_life_stealer_rage.vpcf"
+            //"StatusEffectName"     "particles/status_fx/hunter_rage.vpcf"
+            //"StatusEffectName"     "particles/status_fx/hunter_borrowed_time.vpcf"
+            "StatusEffectPriority" "10"
+
+            "EffectName"  "particles/econ/items/sven/sven_cyclopean_marauder/sven_cyclopean_gods_strength_ambient.vpcf"
+            "EffectAttachType"  "follow_origin"
+
+            "Properties"
+            {
+              "MODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE" "-50"
+              "MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE" "30"
+            }
+
+            "States"
+            {
+              //"MODIFIER_STATE_OUT_OF_GAME" "MODIFIER_STATE_VALUE_ENABLED"
+            }
+          }
+        }
+    }

@@ -1,0 +1,79 @@
+  "dodge"
+  {
+    // General  
+    // ----------------------------------------------------------------------------------------
+    "BaseClass"              "ability_datadriven"
+    "AbilityBehavior"        "DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE | DOTA_ABILITY_BEHAVIOR_HIDDEN"
+    "AbilityTextureName"     "dodge"
+    
+    "AbilityType"            "DOTA_ABILITY_TYPE_BASIC"
+    "MaxLevel"              "4"
+    "RequiredLevel"        "25"
+    "LevelsBetweenUpgrades" "1"
+
+    "AbilityCastPoint"       "0.0"
+    //"AbilityCastAnimation"   "ACT_DOTA_ATTACK"
+    //"AnimationPlaybackRate"  "1"
+    //"AnimationIgnoresModelScale" "1"
+
+    // Stats
+    //----------------------------------------------------------------------------------------
+    //"AbilityDamage"           "0 0 0 0"
+    "AbilityManaCost"         "0 0 0 0"
+    "AbilityCooldown"         "2.0 2.0 2.0 2.0"
+    "AbilityCastRange"        "2000"
+    "AbilityCastRangeBuffer"  "0"
+    "AbilityChannelTime"      "0.0 0.0 0.0 0.0"
+    "AbilityChannelledManaCostPerSecond" "0 0 0 0"
+    "AbilityDuration"         "0.0 0.0 0.0 0.0"
+
+    "precache"
+    {
+      "particle"  "particles/hunter_dodge/dodge_sparrowhawk.vpcf"
+      //"soundfile" "soundevents/game_sounds_heroes/game_sounds_HERO.vsndevts"
+    }
+
+
+    "AbilitySpecial"
+    {
+      "01"
+      {
+        "var_type"      "FIELD_FLOAT"
+        "duration"      "9"
+      }
+    }
+
+    "OnSpellStart"
+    {
+      "RunScript"
+      {
+        "ScriptFile"  "abilities/dodge.lua"
+        "Function"    "OnSpellStart"
+        "Target"      "POINT"
+      }
+    }
+    
+    "Modifiers"
+    {
+      //"modifier_charge_turn"
+      //{
+        //"EffectName"      "particles/units/heroes/hero_faceless_void/faceless_void_chrono_speed.vpcf"
+        //"IsHidden" "1"
+        ////"Passive"  "1"
+        //"OnCreated"
+        //{
+        //"AttachEffect"
+          //{
+            //"EffectName"        "particles/items2_fx/mask_of_madness.vpcf"
+            //"EffectAttachType"  "follow_origin"
+            //"Target"            "CASTER"
+          //}
+        //}
+        
+        //"Properties"
+        //{
+          //"MODIFIER_PROPERTY_TURN_RATE_PERCENTAGE" "%turnrate"
+        //}
+      //}
+    }
+  }
