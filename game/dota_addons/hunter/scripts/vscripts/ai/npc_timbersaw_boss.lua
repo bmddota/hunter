@@ -42,7 +42,7 @@ function Spawn()
 
   local runningTimers = {}
 
-  thisEntity:AddNewModifier(thisEntity, nil, "modifier_bloodseeker_thirst", {})
+  thisEntity:AddNewModifier(thisEntity, nil, "modifier_movespeed_cap", {})
   ApplyModifier(thisEntity, thisEntity, "modifier_damage_reduction", {})
   thisEntity:SetModifierStackCount("modifier_damage_reduction", thisEntity, 0)
   local baseMoveSpeed = thisEntity:GetBaseMoveSpeed()

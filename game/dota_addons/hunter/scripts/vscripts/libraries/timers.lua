@@ -1,4 +1,4 @@
-TIMERS_VERSION = "1.02"
+TIMERS_VERSION = "1.03"
 
 --[[
 
@@ -8,6 +8,9 @@ TIMERS_VERSION = "1.02"
       return 1.0
     end
   )
+
+  -- A timer which calls a function with a table context
+  Timers:CreateTimer(GameMode.someFunction, GameMode)
 
   -- A timer running every second that starts 5 seconds in the future, respects pauses
   Timers:CreateTimer(5, function()

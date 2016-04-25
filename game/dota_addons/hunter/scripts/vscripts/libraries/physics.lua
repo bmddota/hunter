@@ -594,8 +594,8 @@ end
 
 function Physics:Unit(unit)
   if IsPhysicsUnit(unit) then
-    unit:StopPhysicsSimulation()
-    --return
+    --unit:StopPhysicsSimulation()
+    return
   end
   function unit:StopPhysicsSimulation ()
     Physics.timers[unit.PhysicsTimerName] = nil
@@ -1421,7 +1421,7 @@ function Physics:Unit(unit)
             end
 
             newVelocity = (-1 * newVelocity:Dot(normal) * normal) + newVelocity
-            staticSum = (-1 * staticSum:Dot(normal) * normal + staticSum)
+            staticSum = (-1 * staticSum:Dot(normal) * normal) + staticSum
 
             local ndir = dir * -1
             local scalar = math.min((32+bound) / math.abs(ndir.x), (32+bound) / math.abs(ndir.y))
@@ -1600,9 +1600,6 @@ function Physics:Unit(unit)
         staticSum = Vector(0,0,staticSum.z)
         
         if unit.bHibernate then
-          unit.vVelocity = Vector(0,0,0)
-          unit.staticSum = Vector(0,0,0)
-
           unit:DoHibernate()
           local ent = Entities:FindInSphere(nil, position, 35)
           local blocked = false

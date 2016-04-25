@@ -152,7 +152,7 @@ function GameMode:OnPreGame()
     return function()
       print('attempting to create for player', pid)
       local player = PlayerResource:GetPlayer(pid)
-      if PlayerResource:IsValidPlayer(pid) and PlayerResource:GetSelectedHeroEntity(-1) == nil then
+      if PlayerResource:IsValidPlayer(pid) and PlayerResource:GetSelectedHeroEntity(pid) == nil and PlayerResource:GetSelectedHeroName(pid) == "" then
         CreateHeroForPlayer(PlayerResource:GetSelectedHeroName(pid), player)
       end
     end
@@ -180,7 +180,7 @@ function GameMode:OnPreGame()
         PlayerResource:HasSelectedHero(i))
     end
     for i=0,9 do
-      if PlayerResource:IsValidPlayer(i) and PlayerResource:GetSelectedHeroID(i) == -1 then
+      if PlayerResource:IsValidPlayer(i) and PlayerResource:GetSelectedHeroID(i) == -1 and PlayerResource:GetSelectedHeroName(i) == "" then
         PlayerResource:SetHasRandomed(i)
         PlayerResource:SetHasRepicked(i)
         local player = PlayerResource:GetPlayer(i)

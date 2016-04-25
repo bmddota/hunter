@@ -1,0 +1,12 @@
+<root>
+  <styles>
+    <include src="file://{resources}/styles/dotastyles.css" />
+    <include src="file://{resources}/styles/custom_game/hunter_mouse_handling.css" />
+  </styles>
+  <scripts>
+    <include src="file://{resources}/scripts/custom_game/hunter_mouse_handling.js" /> 
+  </scripts>
+  <Panel hittest="false" class="MouseHandlerRoot">
+    
+  </Panel>
+</root>

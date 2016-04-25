@@ -14,7 +14,7 @@ for _,ent in ipairs(ents) do
   ApplyModifier(ent, ent, "no_health_bar", {})
 end
 
-hero:AddNewModifier(hero, nil, "modifier_bloodseeker_thirst", {})
+hero:AddNewModifier(hero, nil, "modifier_movespeed_cap", {})
 hero:FollowNavMesh(false)
 hero:SetBaseMoveSpeed(1000)
 hero:SetPhysicsFriction(0)
